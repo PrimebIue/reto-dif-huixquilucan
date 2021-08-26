@@ -4,7 +4,7 @@
 
 1. [Visión General](##Visión-General)
 2. [Requerimientos](##Requerimientos)
-4. [Schema](#Schema)
+3. [Schema](#Schema)
 
 ## Visión General
 
