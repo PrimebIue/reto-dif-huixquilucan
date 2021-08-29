@@ -48,6 +48,11 @@ El **DIF HUIXQUILUCAN** es una institución que se dedica al desarrollo integral
 * [ ] La aplicacion solo puede ser ejecutada en *Android 16* en adelante, y *IOS 9.0* en adelante.
 * [ ] El producto deberá ser publicado en el *App Store* y *Play Store*.
 * [ ] La aplicación hace uso de la base de datos *Back4App* para mantener a los usuarios actualizados acerca de los servicios del **DIF HUIXQUILUCAN**.
+* [ ] Se realizan 10 peticiones por segundo
+* [ ] Se realizan 10,000 total de peticiones por mes
+* [ ] Almacenamiento de archivos de 1GB
+* [ ] Almacenamiento de base de datos de 0.25GB
+* [ ] Se considera el plan gratis de *Back4App*
 * [ ] Información descargada tiene permanencia en la memoria local de la aplicación y la mantiene hasta que se pueda actualizar.
 * [ ] Cualquier información proporcionada por el cliente será confidencial.
 * [ ] No será divulgada la naturaleza del sistema.
@@ -105,11 +110,11 @@ Por el momento, es una link para regresar a la pagina principal , uno para ir a 
 
 ### Publicaciones de Facebook
 
-Se accede a esta sección mediante el menú de barras, 
+Se accede a esta sección mediante el menú de barras, en la cual se muestran las publicaciónes de Facebook del **DIF Huixquilucan** con la misma vista original de Facebook, aunque ligeramente simplificado para conveniencia y claridad en una lista de celdas vertical.
 
 ## Wireframes & Mapa de Navegación
 
-![](https://i.imgur.com/1Rur1pz.png)
+![](https://i.imgur.com/1Rur1pz.png) 
 ![](https://i.imgur.com/VxGxlQT.png)
 ![](https://i.imgur.com/xP2orGo.png)
 
