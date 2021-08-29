@@ -21,11 +21,8 @@ Instituto Tecnológico y de Estudios Superiores de Monterrey
 
 El **DIF HUIXQUILUCAN** es una institución que se dedica al desarrollo integral familiar de varios grupos vulnerables. Esta institución realiza tanto publicaciones como anuncios a través de su página de *Facebook*, además de que despliega información de sus servicios a través de su sitio web para ser visualizados por su comunidad. La dificultad que se presenta es que navegar ambas de estas plataformas es complicado y no intutuivo para sus usuarios, por lo que no pueden encontrar la información que requieren. Lo que dicha institución necesita del equipo de trabajo es una aplicación que presenta la información que se publica en sus plataformas y sus diferentes localizaciones a manera que sea sencilla de acceder y navegar para sus usuarios.
 
-## Visión General
-
-
-
 ## Requerimientos
+
 
 
 ### Funcionales
@@ -110,7 +107,7 @@ Se accede al menu de barras al seleccionar el icono superior izquierdo, en este 
 
 Por el momento, es una link para regresar a la pagina principal , uno para ir a la pagina web, otro donde se puede contactar a la institución, y finalmente uno que redirige al los anuncios de Facebook.
 
-### Anuncios de Facebook ???
+### Publicaciones de Facebook ???
 
 ## Wireframes & Mapa de Navegación
 
