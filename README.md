@@ -8,22 +8,27 @@
 - Diego Mejía
 
 Instituto Tecnológico y de Estudios Superiores de Monterrey
-
+Wireframes & Mapa de Navegación
 29/08/2021
 
 ## Tabla de Contenidos
 
-1. [Visión General](##Visión-General)
+1. [Problemática](##Problemática)
 2. [Requerimientos](##Requerimientos)
 3. [Schema](#Schema)
+4. [Casos de Uso / Historias de Usuario](##Casos-de-uso-/-Historias-de-usuario)
+5. [Alcance de la Aplicación](##Alcance-de-la-aplicación)
+6. [Diseño de Pantallas](##Diseño-de-Pantallas)
+7. [Wireframes & Mapa de Navegación](##Wireframes-&-Mapa-de-Navegación)
+8. [Matriz de Riesgos](##Matriz-de-Riesgos)
+9. [Cronograma del Reto](##Cronograma-del-Reto)
+10. [Aportaciones individuales y en equipo](##Aportaciones-individuales-y-en-equipo)
 
 ## Problemática
 
 El **DIF HUIXQUILUCAN** es una institución que se dedica al desarrollo integral familiar de varios grupos vulnerables. Esta institución realiza tanto publicaciones como anuncios a través de su página de *Facebook*, además de que despliega información de sus servicios a través de su sitio web para ser visualizados por su comunidad. La dificultad que se presenta es que navegar ambas de estas plataformas es complicado y no intutuivo para sus usuarios, por lo que no pueden encontrar la información que requieren. Lo que dicha institución necesita del equipo de trabajo es una aplicación que presenta la información que se publica en sus plataformas y sus diferentes localizaciones a manera que sea sencilla de acceder y navegar para sus usuarios.
 
 ## Requerimientos
-
-
 
 ### Funcionales
 
@@ -33,6 +38,8 @@ El **DIF HUIXQUILUCAN** es una institución que se dedica al desarrollo integral
 * [ ] Inicio de sesión de administrador que permite la modificación de la información presente en la aplicacion manipulando la base de datos.
 * [ ] Usar *Google Maps SDK* para mostrar la localizacion de los servicios en la pantalla de detalles.
 * [ ] Aplicación presenta una alerta al usuario en caso de que no se haya actualizado la información en más de una semana.
+* [ ] Barra de navegación para multiples vistas.
+* [ ] Vista que muestra los posts recientes del **DIF HUIXQUILUCAN** en Facebook.
 
 ### No Funcionales
 
@@ -58,20 +65,10 @@ El **DIF HUIXQUILUCAN** es una institución que se dedica al desarrollo integral
 - Software:
     * [ ] *Android 16* en adelante o *IOS 9.0* en adelante.
 
-### Requerimientos opcionales
-
-* [ ] Barra de navegación para multiples vistas.
-* [ ] Vista que muestra los posts recientes del **DIF HUIXQUILUCAN** en Facebook.
-
 ### SDKs y APIs
-
-#### Requerido:
 
 - Back4App API
 - Google Maps SDK
-
-#### Opcional:
-
 - Facebook API
 
 ## Casos de uso / Historias de usuario
@@ -87,7 +84,7 @@ El **DIF HUIXQUILUCAN** es una institución que se dedica al desarrollo integral
 - Objetivos: Promover la participación activa de la comunidad con interés en los servicios que ofrece el **DIF Huixquilucan**, además de la presencia de una plataforma que sea más intuitiva de usar en comparación a la página de Facebook o el sitio web, y poder acceder a las localizaciones que corresponden a la institución.
 - Entregables: Entrega de documento de especificación de requerimientos software, documento de diseño de software e infraestructura, prototipo con avance de la aplicación e implementación de la aplicación en su versión final con documentación sobre su uso a ser utilizado por los respectivos usuarios finales.
 
-## Pantallas
+## Diseño de Pantallas
 
 ### Página Principal
 
@@ -103,11 +100,13 @@ Abajo esta una descripcion mas amplia de lo que se lleva a cabo en estos servici
 
 ### Menú de Barras
 
-Se accede al menu de barras al seleccionar el icono superior izquierdo, en este menu aparecen hipervínculos que permiten el acceso a diferentes partes de la aplicacion, la cantidad de links puede ser ajustable dependiendo del desarrollo de los requerimientos.
+Se accede al menú de barras al seleccionar el icono superior izquierdo, en este menu aparecen hipervínculos que permiten el acceso a diferentes partes de la aplicacion, la cantidad de links puede ser ajustable dependiendo del desarrollo de los requerimientos.
 
 Por el momento, es una link para regresar a la pagina principal , uno para ir a la pagina web, otro donde se puede contactar a la institución, y finalmente uno que redirige al los anuncios de Facebook.
 
-### Publicaciones de Facebook ???
+### Publicaciones de Facebook
+
+Se accede a esta sección
 
 ## Wireframes & Mapa de Navegación
 
@@ -125,7 +124,7 @@ Además de esto, la localización de Google Maps obtenida depende de una conexi�
 
 ## Cronograma del reto
 
-
+![](https://i.imgur.com/A5m0GK5.png)
 
 ## Aportaciones individuales y en equipo
 <!-- Aportación individual y en equipo sobre el proceso que siguieron para intercambiar opiniones y posturas al analizar los datos y evidencias proporcionadas por el usuario en la elaboración de la etapa de requerimientos. ¿Hubo autonomía, apertura intelectual y carácter propositivo de manera individual durante la actividad? -->
@@ -144,5 +143,8 @@ Por otro lado, ya que cada integrante tenía una idea clara de la propuesta grup
 
 - Enrique Mondelli
 - José Salgado
-- Jorge Cabiedes
+    - El tabajo al realizar en este equipo fue de una forma altamente autonoma y positiva pero al mismo tiempo estabamos en comunicacion constante. Juntos ideamos e investigamos todo lo necesario para poder llenar el documento y nos divimos las secciones para realizar el trabajo de una forma mas eficiente.
+    - Yo me encargue de el Mapa de Navegacion, el Diseño de Pantallas, ademas de ayudar en el Cronograma y una seccion de Requerimientos.
+- Jorge Cabiedes:
+    - En mi caso personal, aporté lo que a mi me pareció la mejor forma de organizarse en cuanto a las herramientas de colaboración. Propuse utilizar Markdown y Github para la elaboración de los documentos de requerimientos. También propuse el uso de una base de datos, específicamente Back4App y el uso de la API de Facebook para mostrar los posts recientes del DIF Huixquilucan en Facebook. También utilicé mi experience previa en desarrollo de aplicaciones y utilicé mi experiencia para definir objetivos realistas y útiles.
 - Diego Mejía
