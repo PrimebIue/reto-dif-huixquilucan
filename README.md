@@ -8,21 +8,20 @@
 - Diego Mejía
 
 Instituto Tecnológico y de Estudios Superiores de Monterrey
-Wireframes & Mapa de Navegación
+
 29/08/2021
 
 ## Tabla de Contenidos
 
-1. [Problemática](##Problemática)
-2. [Requerimientos](##Requerimientos)
-3. [Schema](#Schema)
-4. [Casos de Uso / Historias de Usuario](##Casos-de-uso-/-Historias-de-usuario)
-5. [Alcance de la Aplicación](##Alcance-de-la-aplicación)
-6. [Diseño de Pantallas](##Diseño-de-Pantallas)
-7. [Wireframes & Mapa de Navegación](##Wireframes-&-Mapa-de-Navegación)
-8. [Matriz de Riesgos](##Matriz-de-Riesgos)
-9. [Cronograma del Reto](##Cronograma-del-Reto)
-10. [Aportaciones individuales y en equipo](##Aportaciones-individuales-y-en-equipo)
+1. [Problemática](#problemática)
+2. [Requerimientos](#requerimientos)
+4. [Casos de Uso / Historias de Usuario](#casos-de-uso--historias-de-usuario)
+5. [Alcance de la Aplicación](#alcance-de-la-aplicación)
+6. [Diseño de Pantallas](#diseño-de-pantallas)
+7. [Wireframes & Mapa de Navegación](#wireframes--mapa-de-navegación)
+8. [Matriz de Riesgos](#matriz-de-riesgos)
+9. [Cronograma del Reto](#cronograma-del-reto)
+10. [Aportaciones individuales y en equipo](#aportaciones-individuales-y-en-equipo)
 
 ## Problemática
 
@@ -106,7 +105,7 @@ Por el momento, es una link para regresar a la pagina principal , uno para ir a 
 
 ### Publicaciones de Facebook
 
-Se accede a esta sección
+Se accede a esta sección mediante el menú de barras, 
 
 ## Wireframes & Mapa de Navegación
 
