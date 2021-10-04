@@ -21,7 +21,7 @@
 6. [Integración de Seguridad en Sistemas Computacionales](#integración-de-seguridad-en-sistemas-computacionales)
 
 ## Diagrama del Diseño de la Base de Datos
-![](https://i.imgur.com/dhKBBfJ.png)
+![](https://i.imgur.com/x6Vxuhc.png)
 
 ## Diagrama de la Arquitectura de la App
 ![](https://i.imgur.com/qCRsr4e.png)
