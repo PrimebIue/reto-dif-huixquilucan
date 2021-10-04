@@ -27,17 +27,19 @@
 ![](https://i.imgur.com/qCRsr4e.png)
 
 ## Diagrama de Clases de la App
-![](https://i.imgur.com/Iz31MV3.png)
+![](https://i.imgur.com/rQc0tMz.png)
 
 ## Diseño de las Interfaces de Usuario
 ![](https://i.imgur.com/ayM54UJ.png)
 ![](https://i.imgur.com/E7v8vm8.png)
 
 ## Diagramas de Secuencia
-![](https://i.imgur.com/DtmmXl5.png)
+![](https://i.imgur.com/S6OWiqs.png)
 
 ## Integración de Seguridad en Sistemas Computacionales
-Las medidas preventivas necesarias para el desarrollo e implementación de la aplicación son esconder las llaves de los *API* de *Google Maps* y *Back4App*. 
+Como la información a utilizar dentro de la app es pública mediante el sitio web del **DIF Huixquilucan**, no es necesario esconder la fuente de los datos de los servicios a desplegar.
+
+A pesar de esto, las medidas preventivas necesarias para el desarrollo e implementación de la aplicación son esconder las llaves de los *API* de *Google Maps* y *Back4App*.
 
 Para llevar a cabo esto, se hará uso de una librería en *Flutter* llamada *flutter_dotenv* la cual es capaz de guardar las variables de las llaves a través de un archivo secreto *.env* para que no se modifquen los datos dentro de las respectivas plataformas, y así simplemente se cargue el archivo completo en los programas.
 
