@@ -34,7 +34,7 @@
 ![](https://i.imgur.com/E7v8vm8.png)
 
 ## Diagramas de Secuencia
-![](https://i.imgur.com/S6OWiqs.png)
+![](https://i.imgur.com/AcW7hNE.png)
 
 ## Integración de Seguridad en Sistemas Computacionales
 Como la información a utilizar dentro de la app es pública mediante el sitio web del **DIF Huixquilucan**, no es necesario esconder la fuente de los datos de los servicios a desplegar.
