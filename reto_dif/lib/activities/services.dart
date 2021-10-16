@@ -20,8 +20,8 @@ class _ServicesState extends State<Services> {
     return Scaffold(
       backgroundColor: Color(0xfffffcf9),
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text('Servicios Dif Huixquilucan'),
+        backgroundColor: Colors.blue[900],
+        title: Text('Servicios'),
         centerTitle: true,
         elevation: 0,
       ),

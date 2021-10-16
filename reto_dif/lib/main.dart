@@ -3,7 +3,9 @@ import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 import 'package:reto_dif/activities/details.dart';
 import 'package:reto_dif/activities/loading.dart';
 import 'package:reto_dif/activities/services.dart';
+import 'package:reto_dif/services/dif_category.dart';
 import 'package:reto_dif/services/dif_service.dart';
+import 'package:reto_dif/activities/categories.dart';
 
 Future<void> parseInit() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,10 +21,12 @@ Future<void> parseInit() async {
     debug: true,
     registeredSubClassMap: <String, ParseObjectConstructor>{
       'services': () => DifService(),
+      'categories': () => DifCategory(),
     },
   );
 
   ParseCoreData.instance.registerSubClass("services", () => DifService());
+  ParseCoreData.instance.registerSubClass("categories", () => DifCategory());
 }
 
 void main() async {
@@ -31,9 +35,10 @@ void main() async {
   runApp(MaterialApp(
     initialRoute: '/',
     routes: {
-      '/': (context) => Loading(),
-      '/services': (context) => Services(),
-      '/details': (context) => Details(),
+      '/': (context) => const Loading(),
+      '/categories': (context) => const Categories(),
+      '/services': (context) => const Services(),
+      '/details': (context) => const Details(),
     },
   ));
 }
