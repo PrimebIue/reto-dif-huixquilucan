@@ -1,6 +1,7 @@
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 import 'package:reto_dif/services/dif_category.dart';
 import 'package:reto_dif/services/dif_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 Future<List<DifService>> getAllServices() async {
   List<DifService> services = [];
@@ -19,16 +20,26 @@ Future<List<DifService>> getAllServices() async {
 
 Future<List<DifCategory>> getCategories() async {
   List<DifCategory> categories = [];
+  List<String> objectIds = [];
 
   var apiResponse = await DifCategory().getAll();
 
   if (apiResponse.success && apiResponse.results != null) {
     for (var category in apiResponse.result) {
+      category.pin();
+      objectIds.add(category.objectId);
+      categories.add(category);
+    }
+    storeStringList(objectIds, 'categories');
+    return categories;
+  } else {
+    // Iterate through my local objects and create the list
+    objectIds = (await getStringList('categories'))!;
+    for (var i = 0; i < objectIds.length; i++) {
+      var category = await DifCategory().fromPin(objectIds[i]);
       categories.add(category);
     }
     return categories;
-  } else {
-    return [];
   }
 }
 
@@ -48,4 +59,14 @@ Future<List<DifService>> getCatServices(DifCategory category) async {
   } else {
     return [];
   }
+}
+
+void storeStringList(List<String> list, String key) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  await prefs.setStringList(key, list);
+}
+
+Future<List<String>?> getStringList(String key) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  return prefs.getStringList(key);
 }

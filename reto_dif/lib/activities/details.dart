@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:reto_dif/services/dif_service.dart';
-import 'package:geocoding/geocoding.dart';
 
 class Details extends StatefulWidget {
   const Details({Key? key}) : super(key: key);
@@ -13,10 +13,9 @@ class Details extends StatefulWidget {
 }
 
 class _DetailsState extends State<Details> {
-
   late GoogleMapController _googleMapController;
   late Marker _serviceLocation;
-  LatLng pos = LatLng(0,0);
+  LatLng pos = LatLng(0, 0);
 
   Map data = {};
   late DifService service;
@@ -34,31 +33,29 @@ class _DetailsState extends State<Details> {
 
   // Specifies the initial position of the google maps camera
   static const _initialCameraPosition = CameraPosition(
-    target: LatLng(19.36672811911716,-99.34209809018242),
+    target: LatLng(19.36672811911716, -99.34209809018242),
     zoom: 11.5,
   );
-
 
   @override
   Widget build(BuildContext context) {
     data = ModalRoute.of(context)!.settings.arguments as Map;
     service = data['service'];
 
-    if (pos == LatLng(0,0)) {
+    if (pos == LatLng(0, 0)) {
       getLocation();
     }
     List address = service.addresses;
     print(address);
 
     _serviceLocation = Marker(
-      markerId: MarkerId('serviceLocation'),
-      infoWindow: InfoWindow(title: service.addresses[0]),
-      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
-      position: pos,
-      onTap: () {
-        print('TAP');
-      }
-    );
+        markerId: MarkerId('serviceLocation'),
+        infoWindow: InfoWindow(title: service.addresses[0]),
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
+        position: pos,
+        onTap: () {
+          print('TAP');
+        });
 
     return Scaffold(
       backgroundColor: Color(0xfffffcf9),
@@ -70,7 +67,9 @@ class _DetailsState extends State<Details> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             Text(
               service.name,
               textAlign: TextAlign.center,
@@ -101,7 +100,9 @@ class _DetailsState extends State<Details> {
                 fontSize: 16.0,
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             const Text(
               "Ubicación",
               textAlign: TextAlign.start,
@@ -113,31 +114,31 @@ class _DetailsState extends State<Details> {
             ),
             Container(
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
                 child: SizedBox(
                   height: 500,
                   child: Scaffold(
-                    body:
-                      GoogleMap(
+                    body: GoogleMap(
                         gestureRecognizers: {
                           Factory<OneSequenceGestureRecognizer>(
-                                () => EagerGestureRecognizer(),
+                            () => EagerGestureRecognizer(),
                           ),
                         },
                         myLocationButtonEnabled: false,
                         zoomControlsEnabled: false,
                         initialCameraPosition: _initialCameraPosition,
-                        onMapCreated: (controller) => _googleMapController = controller,
+                        onMapCreated: (controller) =>
+                            _googleMapController = controller,
                         markers: {
                           _serviceLocation,
-                        }
+                        }),
+                    floatingActionButton: FloatingActionButton(
+                      onPressed: () => _googleMapController.animateCamera(
+                        CameraUpdate.newCameraPosition(_initialCameraPosition),
                       ),
-                      floatingActionButton: FloatingActionButton(
-                        onPressed: () => _googleMapController.animateCamera(
-                          CameraUpdate.newCameraPosition(_initialCameraPosition),
-                        ),
-                        child: const Icon(Icons.center_focus_strong),
-                      ),
+                      child: const Icon(Icons.center_focus_strong),
+                    ),
                   ),
                 ),
               ),

@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:reto_dif/services/database.dart';
 import 'package:reto_dif/services/dif_category.dart';
 
 class Categories extends StatefulWidget {
@@ -12,11 +11,17 @@ class Categories extends StatefulWidget {
 }
 
 class _CategoriesState extends State<Categories> {
-
   Map data = {};
   List<DifCategory> categories = [];
 
-  List<MaterialColor> colors = [Colors.red, Colors.pink, Colors.lightBlue, Colors.green, Colors.orange, Colors.purple];
+  List<MaterialColor> colors = [
+    Colors.red,
+    Colors.pink,
+    Colors.lightBlue,
+    Colors.green,
+    Colors.orange,
+    Colors.purple
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +32,11 @@ class _CategoriesState extends State<Categories> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
-        title: Image.asset('assets/logo.png', fit: BoxFit.contain, height: 40,),
+        title: Image.asset(
+          'assets/logo.png',
+          fit: BoxFit.contain,
+          height: 40,
+        ),
         elevation: 1,
       ),
       body: Padding(
@@ -35,7 +44,7 @@ class _CategoriesState extends State<Categories> {
         child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 200,
-            childAspectRatio: 3/2,
+            childAspectRatio: 3 / 2,
             crossAxisSpacing: 15,
             mainAxisSpacing: 15,
           ),
@@ -50,24 +59,26 @@ class _CategoriesState extends State<Categories> {
               ),
               child: Card(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)
-                ),
+                    borderRadius: BorderRadius.circular(15)),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: colors[Random().nextInt(colors.length)],
-                    borderRadius: BorderRadius.all(Radius.circular(15))
-                  ),
+                      color: colors[Random().nextInt(colors.length)],
+                      borderRadius: BorderRadius.all(Radius.circular(15))),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Image.network(
-                        categories[index].iconUrl,
+                      FadeInImage.assetNetwork(
+                        placeholder: 'assets/placeholder_icon.png',
+                        image: categories[index].iconUrl.url!,
                         height: 80,
                         width: 100,
+                        imageErrorBuilder: (context, error, stacktrace) {
+                          return Image.asset('assets/placeholder_icon.png');
+                        },
                       ),
                       Text(
                         categories[index].name,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
@@ -85,6 +96,7 @@ class _CategoriesState extends State<Categories> {
   }
 
   void goToCategory(DifCategory category) {
-    Navigator.pushNamed(context, '/', arguments: {'category' : category, 'loadState' : 1});
+    Navigator.pushNamed(context, '/',
+        arguments: {'category': category, 'loadState': 1});
   }
 }

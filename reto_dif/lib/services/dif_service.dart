@@ -13,9 +13,30 @@ class DifService extends ParseObject implements ParseCloneable {
 
   String get name => get<String>('name') as String;
 
+  set name(String name) => set<String>(keyName, name);
+
   String get imageUrl => get<ParseFile>('image')!.url as String;
 
   String get description => get<String>('description') as String;
 
+  set description(String description) => set<String>(keyName, description);
+
+  int get id => get<int>('service_id') as int;
+
+  set id(int id) => set<int>(keyName, id);
+
   List<dynamic> get addresses => get('address');
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'description': description,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'Service{id: $id, name: $name, description: $description}';
+  }
 }
