@@ -60,6 +60,7 @@ class _DetailsState extends State<Details> {
     return Scaffold(
       backgroundColor: Color(0xfffffcf9),
       appBar: AppBar(
+        backgroundColor: Colors.blue[900],
         centerTitle: true,
         title: Text('Detalles de servicio'),
       ),
@@ -85,9 +86,16 @@ class _DetailsState extends State<Details> {
             ),
             ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
-              child: Image.network(
-                service.imageUrl,
+              child: FadeInImage.assetNetwork(
+                placeholder: 'assets/placeholder_service.png',
+                image: service.imageUrl,
                 height: 220,
+                imageErrorBuilder: (context, error, stacktrace) {
+                  return Image.asset(
+                    'assets/placeholder_service.png',
+                    height: 220,
+                  );
+                },
               ),
             ),
             const SizedBox(
@@ -111,6 +119,10 @@ class _DetailsState extends State<Details> {
                 fontWeight: FontWeight.bold,
                 letterSpacing: 2.0,
               ),
+            ),
+            Text(
+              'Dirección: ${service.addresses[0]}',
+              textAlign: TextAlign.center,
             ),
             Container(
               child: Padding(

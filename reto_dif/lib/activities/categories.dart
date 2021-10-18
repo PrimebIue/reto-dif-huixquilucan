@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:reto_dif/services/category.dart';
@@ -20,7 +19,9 @@ class _CategoriesState extends State<Categories> {
     Colors.lightBlue,
     Colors.green,
     Colors.orange,
-    Colors.purple
+    Colors.purple,
+    Colors.indigo,
+    Colors.teal
   ];
 
   @override
@@ -62,7 +63,7 @@ class _CategoriesState extends State<Categories> {
                     borderRadius: BorderRadius.circular(15)),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: colors[Random().nextInt(colors.length)],
+                      color: colors[index % colors.length],
                       borderRadius: BorderRadius.all(Radius.circular(15))),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -73,7 +74,11 @@ class _CategoriesState extends State<Categories> {
                         height: 80,
                         width: 100,
                         imageErrorBuilder: (context, error, stacktrace) {
-                          return Image.asset('assets/placeholder_icon.png');
+                          return Image.asset(
+                            'assets/placeholder_icon.png',
+                            height: 80,
+                            width: 100,
+                          );
                         },
                       ),
                       Text(

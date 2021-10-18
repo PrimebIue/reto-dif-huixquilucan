@@ -50,14 +50,22 @@ class _ServicesState extends State<Services> {
                   padding: const EdgeInsets.all(12.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          services[index].imageUrl,
+                        child: FadeInImage.assetNetwork(
+                          placeholder: 'assets/placeholder_service.png',
+                          image: services[index].imageUrl,
                           height: 100.0,
                           width: 150.0,
+                          imageErrorBuilder: (context, error, stacktrace) {
+                            return Image.asset(
+                              'assets/placeholder_service.png',
+                              height: 100.0,
+                              width: 150.0,
+                            );
+                          },
                         ),
                       ),
                       const SizedBox(

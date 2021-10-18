@@ -45,6 +45,7 @@ Future<List<DifCategory>> getCategories() async {
 
 Future<List<DifService>> getCatServices(DifCategory category) async {
   List<DifService> services = [];
+  List<String> objectIds = [];
 
   var queryBuilder = QueryBuilder<DifService>(DifService())
     ..whereEqualTo('category_id', category);
@@ -53,11 +54,20 @@ Future<List<DifService>> getCatServices(DifCategory category) async {
 
   if (apiResponse.success && apiResponse.results != null) {
     for (var service in apiResponse.result) {
+      service.pin();
+      objectIds.add(service.objectId);
+      services.add(service);
+    }
+    storeStringList(objectIds, 'services_${category.name}');
+    return services;
+  } else {
+    print('smd');
+    objectIds = (await getStringList('services_${category.name}'))!;
+    for (var i = 0; i < objectIds.length; i++) {
+      var service = await DifService().fromPin(objectIds[i]);
       services.add(service);
     }
     return services;
-  } else {
-    return [];
   }
 }
 

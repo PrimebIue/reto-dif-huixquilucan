@@ -9,12 +9,16 @@ import 'package:reto_dif/activities/loading.dart';
 import 'package:reto_dif/activities/services.dart';
 import 'package:reto_dif/services/category.dart';
 import 'package:reto_dif/services/service.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 
 Future<void> parseInit() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  const keyApplicationId = 'osRmV2PsRGLXOvrHJXczBTM23BwpCVN3tSB4dlzs';
-  const keyClientKey = 'qaq3zMTlnbJnfa3ekhSJ5J2tkTMfLX7LWnDwiymn';
+  await dotenv.load(fileName: '.env');
+
+  String keyApplicationId = dotenv.env['back4appKeyAppId']!;
+  String keyClientKey = dotenv.env['back4appClientKey']!;
   const keyParseServerUrl = 'https://parseapi.back4app.com';
 
   await Parse().initialize(
