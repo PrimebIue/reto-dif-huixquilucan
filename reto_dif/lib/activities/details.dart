@@ -3,7 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:reto_dif/services/dif_service.dart';
+import 'package:reto_dif/services/service.dart';
 
 class Details extends StatefulWidget {
   const Details({Key? key}) : super(key: key);

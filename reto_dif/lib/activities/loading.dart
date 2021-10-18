@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:reto_dif/services/database.dart';
-import 'package:reto_dif/services/dif_category.dart';
-import 'package:reto_dif/services/dif_service.dart';
+import 'package:reto_dif/services/data_utils.dart';
+import 'package:reto_dif/services/category.dart';
+import 'package:reto_dif/services/service.dart';
 
 class Loading extends StatefulWidget {
   const Loading({Key? key}) : super(key: key);

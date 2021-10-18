@@ -7,8 +7,8 @@ import 'package:reto_dif/activities/categories.dart';
 import 'package:reto_dif/activities/details.dart';
 import 'package:reto_dif/activities/loading.dart';
 import 'package:reto_dif/activities/services.dart';
-import 'package:reto_dif/services/dif_category.dart';
-import 'package:reto_dif/services/dif_service.dart';
+import 'package:reto_dif/services/category.dart';
+import 'package:reto_dif/services/service.dart';
 
 Future<void> parseInit() async {
   WidgetsFlutterBinding.ensureInitialized();

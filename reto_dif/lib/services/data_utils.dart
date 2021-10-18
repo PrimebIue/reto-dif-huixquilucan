@@ -1,6 +1,6 @@
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
-import 'package:reto_dif/services/dif_category.dart';
-import 'package:reto_dif/services/dif_service.dart';
+import 'package:reto_dif/services/category.dart';
+import 'package:reto_dif/services/service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<List<DifService>> getAllServices() async {

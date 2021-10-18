@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:reto_dif/services/dif_category.dart';
+import 'package:reto_dif/services/category.dart';
 
 class Categories extends StatefulWidget {
   const Categories({Key? key}) : super(key: key);
