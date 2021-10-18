@@ -12,30 +12,27 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
-
   Map data = {};
   int loadingState = 0;
 
   void setupCategories() async {
     List<DifCategory> categories = await getCategories();
     Navigator.pushReplacementNamed(context, '/categories',
-    arguments: {'categories': categories});
+        arguments: {'categories': categories});
   }
 
   void setupServices(DifCategory category) async {
     List<DifService> services = await getCatServices(category);
-    print(services);
     Navigator.pushReplacementNamed(context, '/services',
         arguments: {'services': services});
   }
 
   @override
   Widget build(BuildContext context) {
-
     var routeData = ModalRoute.of(context)!.settings.arguments;
-
     data = routeData != null ? routeData as Map : data;
-    loadingState = data.containsKey('loadState') ? data['loadState'] : loadingState;
+
+    loadingState = data.containsKey('loadState') ? data['loadState'] : 0;
 
     if (loadingState == 0) {
       setupCategories();

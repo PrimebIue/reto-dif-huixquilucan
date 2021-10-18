@@ -35,16 +35,17 @@ Future<List<DifCategory>> getCategories() async {
 Future<List<DifService>> getCatServices(DifCategory category) async {
   List<DifService> services = [];
 
-  var queryBuilder = QueryBuilder<DifService>(DifService())..whereEqualTo('category_id', category);
-  
+  var queryBuilder = QueryBuilder<DifService>(DifService())
+    ..whereEqualTo('category_id', category);
+
   var apiResponse = await queryBuilder.query();
 
   if (apiResponse.success && apiResponse.results != null) {
-  for (var service in apiResponse.result) {
-  services.add(service);
-  }
-  return services;
+    for (var service in apiResponse.result) {
+      services.add(service);
+    }
+    return services;
   } else {
-  return [];
+    return [];
   }
 }

@@ -12,6 +12,6 @@ class DifCategory extends ParseObject implements ParseCloneable {
   static const String keyName = 'DifCategory';
 
   String get name => get<String>('name') as String;
-  String get iconUrl => get<ParseFile>('icon')!.url as String;
 
+  String get iconUrl => get<ParseFile>('icon')!.url as String;
 }

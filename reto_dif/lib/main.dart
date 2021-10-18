@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
+import 'package:reto_dif/activities/categories.dart';
 import 'package:reto_dif/activities/details.dart';
 import 'package:reto_dif/activities/loading.dart';
 import 'package:reto_dif/activities/services.dart';
 import 'package:reto_dif/services/dif_category.dart';
 import 'package:reto_dif/services/dif_service.dart';
-import 'package:reto_dif/activities/categories.dart';
 
 Future<void> parseInit() async {
   WidgetsFlutterBinding.ensureInitialized();

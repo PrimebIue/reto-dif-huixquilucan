@@ -17,5 +17,5 @@ class DifService extends ParseObject implements ParseCloneable {
 
   String get description => get<String>('description') as String;
 
-  List<String> get addresses => get<List<String>>('address') as List<String>;
+  List<dynamic> get addresses => get('address');
 }
