@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 import 'package:reto_dif/services/category.dart';
 import 'package:reto_dif/services/service.dart';
@@ -22,6 +24,7 @@ Future<List<DifCategory>> getCategories() async {
   List<DifCategory> categories = [];
   List<String> objectIds = [];
 
+  await parseInit();
   var apiResponse = await DifCategory().getAll();
 
   if (apiResponse.success && apiResponse.results != null) {
@@ -61,7 +64,6 @@ Future<List<DifService>> getCatServices(DifCategory category) async {
     storeStringList(objectIds, 'services_${category.name}');
     return services;
   } else {
-    print('smd');
     objectIds = (await getStringList('services_${category.name}'))!;
     for (var i = 0; i < objectIds.length; i++) {
       var service = await DifService().fromPin(objectIds[i]);
@@ -79,4 +81,28 @@ void storeStringList(List<String> list, String key) async {
 Future<List<String>?> getStringList(String key) async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   return prefs.getStringList(key);
+}
+
+Future<void> parseInit() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await dotenv.load(fileName: '.env');
+
+  String keyApplicationId = dotenv.env['back4appKeyAppId']!;
+  String keyClientKey = dotenv.env['back4appClientKey']!;
+  const keyParseServerUrl = 'https://parseapi.back4app.com';
+
+  await Parse().initialize(
+    keyApplicationId,
+    keyParseServerUrl,
+    clientKey: keyClientKey,
+    debug: false,
+    registeredSubClassMap: <String, ParseObjectConstructor>{
+      'services': () => DifService(),
+      'categories': () => DifCategory(),
+    },
+  );
+
+  ParseCoreData.instance.registerSubClass("services", () => DifService());
+  ParseCoreData.instance.registerSubClass("categories", () => DifCategory());
 }

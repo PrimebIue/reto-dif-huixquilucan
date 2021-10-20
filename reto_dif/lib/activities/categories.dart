@@ -13,7 +13,7 @@ class _CategoriesState extends State<Categories> {
   Map data = {};
   List<DifCategory> categories = [];
 
-  List<MaterialColor> colors = [
+  static final List<MaterialColor> colors = [
     Colors.red,
     Colors.pink,
     Colors.lightBlue,

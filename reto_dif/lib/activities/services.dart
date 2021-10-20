@@ -21,7 +21,7 @@ class _ServicesState extends State<Services> {
       backgroundColor: Color(0xfffffcf9),
       appBar: AppBar(
         backgroundColor: Colors.blue[900],
-        title: Text('Servicios'),
+        title: const Text('Servicios'),
         centerTitle: true,
         elevation: 0,
       ),

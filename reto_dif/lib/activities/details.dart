@@ -15,7 +15,7 @@ class Details extends StatefulWidget {
 class _DetailsState extends State<Details> {
   late GoogleMapController _googleMapController;
   late Marker _serviceLocation;
-  LatLng pos = LatLng(0, 0);
+  LatLng pos = const LatLng(0, 0);
 
   Map data = {};
   late DifService service;
@@ -32,24 +32,24 @@ class _DetailsState extends State<Details> {
   }
 
   // Specifies the initial position of the google maps camera
-  static const _initialCameraPosition = CameraPosition(
-    target: LatLng(19.36672811911716, -99.34209809018242),
-    zoom: 11.5,
-  );
 
   @override
   Widget build(BuildContext context) {
+    CameraPosition _initialCameraPosition = CameraPosition(
+      target: pos,
+      zoom: 11.5,
+    );
     data = ModalRoute.of(context)!.settings.arguments as Map;
     service = data['service'];
 
-    if (pos == LatLng(0, 0)) {
+    if (pos == const LatLng(0, 0)) {
       getLocation();
     }
     List address = service.addresses;
     print(address);
 
     _serviceLocation = Marker(
-        markerId: MarkerId('serviceLocation'),
+        markerId: const MarkerId('serviceLocation'),
         infoWindow: InfoWindow(title: service.addresses[0]),
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
         position: pos,
@@ -62,23 +62,25 @@ class _DetailsState extends State<Details> {
       appBar: AppBar(
         backgroundColor: Colors.blue[900],
         centerTitle: true,
-        title: Text('Detalles de servicio'),
+        title: const Text('Detalles de servicio'),
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(
-              height: 10,
-            ),
-            Text(
-              service.name,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.grey[800],
-                fontSize: 24.0,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 2.0,
+            Container(
+              width: 1000,
+              padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+              color: Colors.blue[700],
+              child: Text(
+                service.name,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2.0,
+                ),
               ),
             ),
             const SizedBox(
@@ -101,14 +103,34 @@ class _DetailsState extends State<Details> {
             const SizedBox(
               height: 8,
             ),
-            Text(
-              service.description,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 16.0,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 10),
+              child: Card(
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)
+                ),
+                color: Colors.blue[500],
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: service.description != 'None' ? Text(
+                    service.description,
+                    textAlign: TextAlign.justify,
+                    style: const TextStyle(
+                      fontSize: 16.0,
+                      color: Colors.white,
+                    ),
+                  ) : const Text(
+                      'No hay descripción disponible',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             const Text(
@@ -120,37 +142,47 @@ class _DetailsState extends State<Details> {
                 letterSpacing: 2.0,
               ),
             ),
-            Text(
-              'Dirección: ${service.addresses[0]}',
-              textAlign: TextAlign.center,
-            ),
-            Container(
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-                child: SizedBox(
-                  height: 500,
-                  child: Scaffold(
-                    body: GoogleMap(
-                        gestureRecognizers: {
-                          Factory<OneSequenceGestureRecognizer>(
-                            () => EagerGestureRecognizer(),
+            service.addresses[0] != "" ? Padding(
+              padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+              child: Text(
+                '${service.addresses[0]}',
+                textAlign: TextAlign.center,
+              ),
+            ) : const Text('No hay dirección disponible'),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+              child: SizedBox(
+                height: 500,
+                child: Scaffold(
+                  body: pos != const LatLng(0,0) ? GoogleMap(
+                      gestureRecognizers: {
+                        Factory<OneSequenceGestureRecognizer>(
+                          () => EagerGestureRecognizer(),
+                        ),
+                      },
+                      myLocationButtonEnabled: false,
+                      zoomControlsEnabled: false,
+                      initialCameraPosition: _initialCameraPosition,
+                      onMapCreated: (controller) =>
+                          _googleMapController = controller,
+                      markers: {
+                        _serviceLocation,
+                      }) : const Center(
+                        child: Text(
+                        'Mapa no disponible',
+                    textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 32,
                           ),
-                        },
-                        myLocationButtonEnabled: false,
-                        zoomControlsEnabled: false,
-                        initialCameraPosition: _initialCameraPosition,
-                        onMapCreated: (controller) =>
-                            _googleMapController = controller,
-                        markers: {
-                          _serviceLocation,
-                        }),
-                    floatingActionButton: FloatingActionButton(
-                      onPressed: () => _googleMapController.animateCamera(
-                        CameraUpdate.newCameraPosition(_initialCameraPosition),
+                  ),
                       ),
-                      child: const Icon(Icons.center_focus_strong),
+                  floatingActionButton: FloatingActionButton(
+                    onPressed: () => _googleMapController.animateCamera(
+                      CameraUpdate.newCameraPosition(_initialCameraPosition),
                     ),
+                    child: const Icon(Icons.center_focus_strong),
                   ),
                 ),
               ),

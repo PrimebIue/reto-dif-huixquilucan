@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:reto_dif/services/data_utils.dart';
 import 'package:reto_dif/services/category.dart';
+import 'package:reto_dif/services/data_utils.dart';
 import 'package:reto_dif/services/service.dart';
 
 class Loading extends StatefulWidget {
@@ -35,7 +35,12 @@ class _LoadingState extends State<Loading> {
     loadingState = data.containsKey('loadState') ? data['loadState'] : 0;
 
     if (loadingState == 0) {
-      setupCategories();
+      //setupCategories();
+
+      getCategories().then((categories) {
+        Navigator.pushReplacementNamed(context, '/categories',
+            arguments: {'categories': categories});
+      });
     } else if (loadingState == 1) {
       setupServices(data['category']);
     }
@@ -50,4 +55,5 @@ class _LoadingState extends State<Loading> {
       ),
     );
   }
+
 }
