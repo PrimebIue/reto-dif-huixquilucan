@@ -51,11 +51,11 @@ El **DIF HUIXQUILUCAN** es una institución que se dedica al desarrollo integral
 
 ### Funcionales
 
-* [ ] Los servicios del **DIF HUIXQUILUCAN** se despliegan en vista de cuadrícula.
-* [ ] Al hacer click en un elemento de la lista, se abre una pantalla de detalles en donde se ve la descripción del servicio y su número telefónico.
+* [x] Los servicios del **DIF HUIXQUILUCAN** se despliegan en vista de cuadrícula.
+* [x] Al hacer click en un elemento de la lista, se abre una pantalla de detalles en donde se ve la descripción del servicio y su número telefónico.
 * [ ] El usuario puede buscar servicios utilizando un barra de búsqueda en la parte superior de la aplicación.
 * [ ] Inicio de sesión de administrador que permite la modificación de la información presente en la aplicación manipulando la base de datos.
-* [ ] Usar *Google Maps SDK* para mostrar la localización de los servicios en la pantalla de detalles.
+* [x] Usar *Google Maps SDK* para mostrar la localización de los servicios en la pantalla de detalles.
 * [ ] Aplicación presenta una alerta al usuario en caso de que no se haya actualizado la información en más de una semana.
 * [ ] Barra de navegación para múltiples vistas.
 * [ ] Vista que muestra los publicaciones recientes del **DIF HUIXQUILUCAN** en Facebook.
@@ -172,7 +172,7 @@ Se accede a esta sección mediante el menú de barras, en la cual se muestran la
 1. Uno de los principales riesgos con los que esta aplicación cuenta es la dependencia que presenta a la plataforma de Facebook, ya que si esta se cae la sección de anuncios no se puede visualizar si no se han actualizado de manera previa. Es por eso que para prevenir esto se actualiza la información guardada dentro de la misma aplicación. 
 2. La localización de *Google Maps* obtenida depende de una conexión a internet, a menos que esta se guarde a primera instancia de conexión de internet y no requiera de esta conexión después, lo cual es la prevención hacía esta situación de riesgo.
 3. Al añadir la funcionalidad de manejo de información por parte de los administradores, se tiene que realizar un sistema de inicio de sesión. Este sistema trae el riesgo de que alguien que no es administrador entre como administrador y cause una pérdida de datos necesario para el buen desempeño de la aplicación. Por lo cual es de suma importancia integrar un alto nivel de seguridad para prevenir este tipo de ataque y contar con un respaldo de la información.
-4. Al utilizar *Back4App* para el almacenamiento de la información de los servicios y datos de sesión de administradores, se crea una dephttps://i.imgur.com/5M0hR8j.pngendencia a este servicio, por lo cual el riesgo de que exista algún defecto se trasladaría de manera paralela a nuestra aplicación. La manera de prevenir esto es extraer toda la información de la base de datos y solo realizar cambios si existe una posible actualización, ya que la información estaría almacenada de manera local.
+4. Al utilizar *Back4App* para el almacenamiento de la información de los servicios y datos de sesión de administradores, se crea una dependencia a este servicio, por lo cual el riesgo de que exista algún defecto se trasladaría de manera paralela a nuestra aplicación. La manera de prevenir esto es extraer toda la información de la base de datos y solo realizar cambios si existe una posible actualización, ya que la información estaría almacenada de manera local.
 
 ![](https://i.imgur.com/5M0hR8j.png)
 
