@@ -27,7 +27,12 @@ class _DetailsState extends State<Details> {
 
   @override
   void dispose() {
-    _googleMapController.dispose();
+    try {
+      _googleMapController.dispose();
+    } catch (e) {
+      print(e);
+    }
+
     super.dispose();
   }
 
@@ -104,29 +109,31 @@ class _DetailsState extends State<Details> {
               height: 8,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 10),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 0.0, horizontal: 10),
               child: Card(
                 elevation: 10,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)
-                ),
+                    borderRadius: BorderRadius.circular(15)),
                 color: Colors.blue[500],
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
-                  child: service.description != 'None' ? Text(
-                    service.description,
-                    textAlign: TextAlign.justify,
-                    style: const TextStyle(
-                      fontSize: 16.0,
-                      color: Colors.white,
-                    ),
-                  ) : const Text(
-                      'No hay descripción disponible',
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      color: Colors.white,
-                    ),
-                  ),
+                  child: service.description != 'None'
+                      ? Text(
+                          service.description,
+                          textAlign: TextAlign.justify,
+                          style: const TextStyle(
+                            fontSize: 16.0,
+                            color: Colors.white,
+                          ),
+                        )
+                      : const Text(
+                          'No hay descripción disponible',
+                          style: TextStyle(
+                            fontSize: 16.0,
+                            color: Colors.white,
+                          ),
+                        ),
                 ),
               ),
             ),
@@ -142,42 +149,47 @@ class _DetailsState extends State<Details> {
                 letterSpacing: 2.0,
               ),
             ),
-            service.addresses[0] != "" ? Padding(
-              padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
-              child: Text(
-                '${service.addresses[0]}',
-                textAlign: TextAlign.center,
-              ),
-            ) : const Text('No hay dirección disponible'),
+            service.addresses[0] != ""
+                ? Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+                    child: Text(
+                      '${service.addresses[0]}',
+                      textAlign: TextAlign.center,
+                    ),
+                  )
+                : const Text('No hay dirección disponible'),
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
               child: SizedBox(
                 height: 500,
                 child: Scaffold(
-                  body: pos != const LatLng(0,0) ? GoogleMap(
-                      gestureRecognizers: {
-                        Factory<OneSequenceGestureRecognizer>(
-                          () => EagerGestureRecognizer(),
-                        ),
-                      },
-                      myLocationButtonEnabled: false,
-                      zoomControlsEnabled: false,
-                      initialCameraPosition: _initialCameraPosition,
-                      onMapCreated: (controller) =>
-                          _googleMapController = controller,
-                      markers: {
-                        _serviceLocation,
-                      }) : const Center(
-                        child: Text(
-                        'Mapa no disponible',
-                    textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 32,
+                  body: pos != const LatLng(0, 0)
+                      ? GoogleMap(
+                          key: const Key('GoogleMap'),
+                          gestureRecognizers: {
+                            Factory<OneSequenceGestureRecognizer>(
+                              () => EagerGestureRecognizer(),
+                            ),
+                          },
+                          myLocationButtonEnabled: false,
+                          zoomControlsEnabled: false,
+                          initialCameraPosition: _initialCameraPosition,
+                          onMapCreated: (controller) =>
+                              _googleMapController = controller,
+                          markers: {
+                            _serviceLocation,
+                          })
+                      : const Center(
+                          child: Text(
+                            'Mapa no disponible',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 32,
+                            ),
                           ),
-                  ),
-                      ),
+                        ),
                   floatingActionButton: FloatingActionButton(
                     onPressed: () => _googleMapController.animateCamera(
                       CameraUpdate.newCameraPosition(_initialCameraPosition),
@@ -195,8 +207,6 @@ class _DetailsState extends State<Details> {
 
   void getLocation() async {
     List<Location> locations = await locationFromAddress(service.addresses[0]);
-
-    print(locations);
 
     double lat = locations[0].latitude;
     double lon = locations[0].longitude;

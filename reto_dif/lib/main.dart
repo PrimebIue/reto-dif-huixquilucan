@@ -5,10 +5,8 @@ import 'package:reto_dif/activities/categories.dart';
 import 'package:reto_dif/activities/details.dart';
 import 'package:reto_dif/activities/loading.dart';
 import 'package:reto_dif/activities/services.dart';
-import 'package:reto_dif/services/data_utils.dart';
 
 void main() async {
-
   runApp(const DifApp());
 }
 
@@ -17,11 +15,8 @@ class DifApp extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-
-
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       initialRoute: '/',
       routes: {
