@@ -23,7 +23,7 @@ Para llevar a cabo la ejecución correcta de la aplicación móvil desarrollada 
 4. Ejecutar `flutter pub get` para que todas las dependencias y *assets* sean configuradas correctamente. 
 5. Seleccionar un dispositivo virtual o físico en el cuál visualizar la aplicación, ya sea de la plataforma *IOs* o *Android*.
 6. Verificar que el dispositivo esté conectado a internet para poder hacer la descarga de información por primera vez de manera correcta (este paso es crucial para que la aplicación funcione adecuadamente en el futuro).
-7. Seleccionar el botón de *run* del programa *main.dart* para cargar la aplicación en el dispositivo o seleccionar el botón de *run* al lado del `main` del mismo.
+7. Seleccionar el botón de *run* del programa `main.dart` que se encuentra en la carpeta `lib` para cargar la aplicación en el dispositivo o seleccionar el botón de *run* al lado del `main` del mismo.
 
 Después de haber seguido todos estos pasos, es posible visualizar la información de todos los servicios ya sea con o sin conexión, solo que sin conexión no se pueden visualizar las imagenes (para no utilizar tanta memoria en el celular) o el mapa de *Google Maps*.
 
