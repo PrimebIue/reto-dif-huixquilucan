@@ -1,4 +1,3 @@
-// Data Persistence
 
 import 'package:flutter/material.dart';
 import 'package:reto_dif/activities/categories.dart';

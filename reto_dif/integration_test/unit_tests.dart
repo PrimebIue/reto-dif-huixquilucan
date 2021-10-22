@@ -66,8 +66,7 @@ void main() {
     expect(find.text('Atención al Adulto Mayor'), findsOneWidget);
     expect(find.text('Atención Jurídica'), findsOneWidget);
     expect(find.text('Comedor Infantil'), findsOneWidget);
-    expect(
-        find.text('Departamento de Capacitación a la Mujer'), findsOneWidget);
+    expect(find.text('Departamento de Capacitación a la Mujer'), findsOneWidget);
     expect(find.text('Comedor Infantil'), findsOneWidget);
     expect(find.text('Actividad Física'), findsOneWidget);
     expect(find.text('Pilares de Acción'), findsOneWidget);
