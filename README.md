@@ -62,33 +62,33 @@ El **DIF HUIXQUILUCAN** es una institución que se dedica al desarrollo integral
 
 ### No Funcionales
 
-* [ ] Interface desarrollada en *Flutter* utilizando *Android Studio*.
-* [ ] La gestión del proyecto será con el modelo SCRUM.
-* [ ] El equipo de trabajo consiste de 4 integrantes.
-* [ ] La aplicación solo estará disponible en dispositivos móviles inteligentes.
-* [ ] La aplicación solo puede ser ejecutada en *Android 16* en adelante, y *IOS 9.0* en adelante.
+* [x] Interface desarrollada en *Flutter* utilizando *Android Studio*.
+* [x] La gestión del proyecto será con el modelo SCRUM.
+* [x] El equipo de trabajo consiste de 4 integrantes.
+* [x] La aplicación solo estará disponible en dispositivos móviles inteligentes.
+* [x] La aplicación solo puede ser ejecutada en *Android 16* en adelante, y *IOS 9.0* en adelante.
 * [ ] El producto deberá ser publicado en el *App Store* y *Play Store*.
-* [ ] La aplicación hace uso de la base de datos *Back4App* para mantener a los usuarios actualizados acerca de los servicios del **DIF HUIXQUILUCAN**.
-* [ ] Se realizan 10 peticiones por segundo.
-* [ ] Se realizan 10,000 total de peticiones por mes.
-* [ ] Almacenamiento de archivos de 1GB.
-* [ ] Almacenamiento de base de datos de 0.25GB.
-* [ ] Se considera el plan gratis de *Back4App*.
-* [ ] Información descargada tiene permanencia en la memoria local de la aplicación y la mantiene hasta que se pueda actualizar.
-* [ ] Cualquier información proporcionada por el cliente será confidencial.
-* [ ] No será divulgada la naturaleza del sistema.
-* [ ] Los derechos de autor pertenecerán a **DIF HUIXQUILUCAN**.
+* [x] La aplicación hace uso de la base de datos *Back4App* para mantener a los usuarios actualizados acerca de los servicios del **DIF HUIXQUILUCAN**.
+* [x] Se realizan 10 peticiones por segundo.
+* [x] Se realizan 10,000 total de peticiones por mes.
+* [x] Almacenamiento de archivos de 1GB.
+* [x] Almacenamiento de base de datos de 0.25GB.
+* [x] Se considera el plan gratis de *Back4App*.
+* [x] Información descargada tiene permanencia en la memoria local de la aplicación y la mantiene hasta que se pueda actualizar.
+* [x] Cualquier información proporcionada por el cliente será confidencial.
+* [x] No será divulgada la naturaleza del sistema.
+* [x] Los derechos de autor pertenecerán a **DIF HUIXQUILUCAN**.
 
 ### Interfaces Externas
 
 - Usuario:
-    * [ ] Tener una aplicación que sea sencilla de entender y navegar.
-    * [ ] Poder visualizar información de las distintas localizaciones que corresponden a la institución.
+    * [x] Tener una aplicación que sea sencilla de entender y navegar.
+    * [x] Poder visualizar información de las distintas localizaciones que corresponden a la institución.
     * [ ] Poder observar los anuncios y publicaciones más recientes, a más tardar de una semana.
 - Hardware:
-    * [ ] Dispositivo inteligente con pantalla táctil de IOS o Android.
+    * [x] Dispositivo inteligente con pantalla táctil de IOS o Android.
 - Software:
-    * [ ] *Android 16* en adelante o *IOS 9.0* en adelante.
+    * [x] *Android 16* en adelante o *IOS 9.0* en adelante.
 
 ### SDKs y APIs
 
