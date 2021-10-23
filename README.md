@@ -10,11 +10,11 @@
 - Diego Mejía - A01024228
 
 ### Profesores
-- Jorge Rofríguez
-- Luis Mucino
-- José Eslava
-- Edgar Manoatl
-- Federico Navarro
+- Jorge Rodríguez Ruiz
+- Luis Muciño Hernandez
+- José Reyes Eslava Zavaleta
+- Edgar Manoatl López
+- Federico Navarro Bernáldez
 
 ### Bloque 
 Integración de seguridad informática en redes y sistemas de software
