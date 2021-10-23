@@ -9,6 +9,16 @@
 - Jorge Cabiedes - A01024053
 - Diego Mejía - A01024228
 
+### Profesores
+- Jorge Rofríguez
+- Luis Mucino
+- José Eslava
+- Edgar Manoatl
+- Federico Navarro
+
+### Bloque 
+Integración de seguridad informática en redes y sistemas de software
+
 04/10/2021
 
 ## Tabla de Contenidos
